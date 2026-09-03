@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-78e5cdc9-a1d1-4a3d-85d3-fb5133723077/styles.css" />
+<script src="_ds/modernist-78e5cdc9-a1d1-4a3d-85d3-fb5133723077/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  a { color: var(--color-accent-700); }
+  a:hover { color: var(--color-accent); }
+</style>
+</helmet>
+
+<div style="width:100%;overflow-x:hidden">
+
+  <div style="background:var(--color-text);color:var(--color-bg);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:var(--space-2) var(--space-4)">
+    Korhogo · Motos Apsonic révisées · Garantie incluse · Livraison à domicile
+  </div>
+
+  <header style="position:sticky;top:0;z-index:40;background:var(--color-bg)">
+    <div class="nav" style="max-width:1240px;margin:0 auto;flex-wrap:wrap;gap:var(--space-3) var(--space-6);padding:var(--space-4)">
+      <a href="#accueil" class="nav-brand" style="display:flex;align-items:baseline;gap:var(--space-3);color:var(--color-text);text-decoration:none">
+        <span style="font-size:22px;letter-spacing:-0.02em">LE BON COIN</span>
+        <span style="font-family:var(--font-body);font-weight:400;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600)">Korhogo · Apsonic</span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-6)">
+        <a href="#motos">Nos motos</a>
+        <a href="#quiz">Quelle moto ?</a>
+        <a href="#livraison">Livraison</a>
+        <a href="#histoire">Notre histoire</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" onClick="{{ toggleCart }}" class="btn btn-secondary" style="padding:var(--space-2) var(--space-4);white-space:nowrap">{{ cartLabel }}</button>
+      <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="padding:var(--space-2) var(--space-4)">WhatsApp</a>
+    </div>
+  </header>
+
+  <section id="accueil" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:var(--space-8);align-items:end">
+    <div>
+      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);padding-bottom:var(--space-3);border-bottom:2px solid var(--color-divider)">Point de vente moto — Korhogo, Côte d'Ivoire</div>
+      <h1 style="font-size:clamp(42px,5.6vw,76px);margin:var(--space-6) 0 0;letter-spacing:-0.03em;text-wrap:pretty">La moto qu'il vous faut, révisée, garantie, livrée devant chez vous.</h1>
+      <p style="font-size:17px;max-width:34em;margin:var(--space-6) 0 0;color:var(--color-neutral-800)">Chaque Apsonic passe à l'atelier avant d'être proposée ici : moteur écouté, freins, chaîne, pneus, papiers vérifiés. L'état est noté sur 10, honnêtement. Vous savez ce que vous achetez, et à quel prix.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)">
+        <a class="btn btn-primary" href="#motos" style="padding:var(--space-3) var(--space-6);font-size:16px">Voir les motos disponibles</a>
+        <a class="btn btn-secondary" href="{{ waLink }}" target="_blank" rel="noopener" style="padding:var(--space-3) var(--space-6);font-size:16px">Écrire sur WhatsApp</a>
+      </div>
+    </div>
+    <figure class="grayscale" style="position:relative;aspect-ratio:4/3;background:var(--color-surface)">
+      <image-slot id="v3-hero" shape="rect" fit="contain" src="./img/apsonic-f1d.jpeg" placeholder="Photo — une Apsonic devant le point de vente"></image-slot>
+    </figure>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:0 var(--space-4)">
+    <div style="border-top:2px solid var(--color-divider);border-bottom:2px solid var(--color-divider);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <div style="padding:var(--space-6) var(--space-6) var(--space-6) 0">
+        <div style="font-family:var(--font-heading);font-size:34px;line-height:1;letter-spacing:-0.03em">250–350 000</div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:var(--space-2)">FCFA · occasion en bon état</div>
+      </div>
+      <div style="padding:var(--space-6);border-left:2px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:34px;line-height:1;letter-spacing:-0.03em">10 points</div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:var(--space-2)">de contrôle avant la vente</div>
+      </div>
+      <div style="padding:var(--space-6);border-left:2px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:34px;line-height:1;letter-spacing:-0.03em">3 à 12 mois</div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:var(--space-2)">de garantie selon la moto</div>
+      </div>
+      <div style="padding:var(--space-6);border-left:2px solid var(--color-divider)">
+        <div style="font-family:var(--font-heading);font-size:34px;line-height:1;letter-spacing:-0.03em">Offerte</div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:var(--space-2)">livraison dans Korhogo centre</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4);display:grid;gap:0">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-8);padding:var(--space-8) 0;border-bottom:2px solid var(--color-divider)">
+      <div style="display:flex;gap:var(--space-4)">
+        <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">01</span>
+        <div>
+          <h3 style="font-size:24px;margin:0 0 var(--space-2)">Motos bien entretenues</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">Révision complète avant la mise en vente : moteur, freins, chaîne, pneus. Ce qui est fatigué est remplacé, ce qui reste est noté sur la fiche.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--space-4)">
+        <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">02</span>
+        <div>
+          <h3 style="font-size:24px;margin:0 0 var(--space-2)">Garantie incluse</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">Bon de garantie écrit, mécanicien joignable, pièces Apsonic en stock à Korhogo. Une panne moteur dans la période : vous revenez, on répare.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--space-4)">
+        <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">03</span>
+        <div>
+          <h3 style="font-size:24px;margin:0 0 var(--space-2)">À domicile, dans Korhogo</h3>
+          <p style="margin:0;font-size:15px;color:var(--color-neutral-800)">On amène la moto chez vous, vous l'essayez devant votre porte. Si elle ne vous convient pas, elle repart avec nous.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="motos" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--space-6);border-bottom:2px solid var(--color-divider);padding-bottom:var(--space-4)">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Le coin de vente</div>
+        <h2 style="font-size:clamp(32px,4vw,52px);margin:var(--space-2) 0 0;letter-spacing:-0.03em">Six motos disponibles cette semaine</h2>
+      </div>
+      <p class="text-muted" style="margin:0 0 var(--space-1) auto;font-size:14px;max-width:26em">Prix en FCFA, négociables sur place. Aucun paiement en ligne : tout se règle au point de vente ou à la livraison.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:var(--space-6);margin-top:var(--space-8)">
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m1" shape="rect" fit="contain" src="./img/apsonic-f1d.jpeg" placeholder="Photo — Apsonic F1D"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">État 9/10</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 6 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic F1D 150</h3>
+        <p class="card-body" style="font-size:14px">Occasion récente, allure sport et 150 cm³ souples. Révisée entièrement, papiers en règle.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">430 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM1 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m2" shape="rect" fit="contain" src="./img/moto-naked.jpeg" placeholder="Photo — Apsonic AP125-30 Aloba, 3/4 avant"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">État 9/10</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 6 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic AP125-30 « Aloba »</h3>
+        <p class="card-body" style="font-size:14px">La valeur sûre : 125 cm³ increvable, sobre, pièces disponibles partout. Ville et piste.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">320 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM2 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m3" shape="rect" fit="contain" src="./img/moto-trail.jpeg" placeholder="Photo — Apsonic AP150 Tiger, profil"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">État 8/10</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 6 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic AP150 Tiger</h3>
+        <p class="card-body" style="font-size:14px">150 cm³ avec du couple : longues routes du Nord, charges et passagers sans forcer. Chaîne remplacée.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">395 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM3 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m4" shape="rect" fit="contain" src="./img/moto-cruiser.jpeg" placeholder="Photo — Apsonic AP125 Sport"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">État 8/10</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 6 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic AP125 Sport</h3>
+        <p class="card-body" style="font-size:14px">Selle basse, tenue de route agréable en ville. Pneus et plaquettes neufs.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">340 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM4 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m6" shape="rect" fit="contain" src="./img/moto-xa.jpeg" placeholder="Photo — Apsonic AP110"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">État 8/10</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 3 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic AP110</h3>
+        <p class="card-body" style="font-size:14px">Petite cylindrée économique, parfaite pour débuter ou pour les trajets quotidiens.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">250 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM6 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="card" style="padding:var(--space-4);gap:var(--space-3)">
+        <figure style="position:relative;aspect-ratio:4/3;background:#ffffff;border:1px solid var(--color-divider)">
+          <image-slot id="v3-m7" shape="rect" fit="contain" src="./img/moto-ap150-plus.jpeg" placeholder="Photo — Apsonic AP150-30 Plus neuve"></image-slot>
+        </figure>
+        <div style="display:flex;align-items:center;gap:var(--space-2)">
+          <span class="tag tag-accent" style="white-space:nowrap">Neuve · 0 km</span>
+          <span class="tag tag-outline" style="white-space:nowrap">Garantie 12 mois</span>
+        </div>
+        <h3 class="card-title" style="font-size:21px">Apsonic AP150-30 Plus neuve</h3>
+        <p class="card-body" style="font-size:14px">Sortie de carton, montée et rodée à l'atelier. Carte grise faite avec vous, casque offert.</p>
+        <div style="display:grid;gap:var(--space-2);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--space-3)">
+            <span style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">690 000 <span style="font-weight:400;font-size:12px;color:var(--color-neutral-600)">FCFA</span></span>
+            <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="white-space:nowrap">Réserver un essai</a>
+          </div>
+          <button type="button" onClick="{{ addM7 }}" class="btn btn-secondary" style="justify-content:flex-start;width:100%;white-space:nowrap">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article style="background:var(--color-text);color:var(--color-bg);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);justify-content:center">
+        <div style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-400)">Sur commande</div>
+        <h3 style="font-size:26px;margin:0;letter-spacing:-0.02em">Vous cherchez un modèle précis ?</h3>
+        <p style="margin:0;font-size:15px;color:var(--color-neutral-300)">Dites-nous le modèle, l'usage et votre budget. On cherche dans notre réseau de revendeurs et on vous rappelle dès qu'on trouve.</p>
+        <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:var(--space-2);padding:var(--space-3) var(--space-6)">Faire une demande</a>
+      </article>
+
+    </div>
+    <p class="text-muted" style="margin:var(--space-6) 0 0;font-size:12.5px">Prix indicatifs pour Korhogo, à confirmer selon l'état constaté à l'essai. Une moto part, la fiche disparaît.</p>
+  </section>
+
+  <section id="livraison" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8);align-items:start">
+    <div>
+      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700);padding-bottom:var(--space-3);border-bottom:2px solid var(--color-divider)">Livraison à domicile</div>
+      <h2 style="font-size:clamp(30px,3.8vw,48px);margin:var(--space-6) 0 var(--space-4);letter-spacing:-0.03em">On vient jusqu'à votre cour.</h2>
+      <p style="font-size:16px;max-width:36em;color:var(--color-neutral-800)">Pas besoin de traverser la ville pour voir une moto. Vous choisissez, on l'amène, vous l'essayez chez vous. Livraison offerte dans Korhogo centre ; ailleurs, on regarde ensemble.</p>
+      <div style="display:grid;margin-top:var(--space-6);border-top:2px solid var(--color-divider)">
+        <div style="display:flex;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-divider)">
+          <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">01</span>
+          <div>
+            <h4 style="margin:0 0 var(--space-1);font-size:18px">Vous écrivez sur WhatsApp</h4>
+            <p style="margin:0;font-size:14.5px;color:var(--color-neutral-700)">Envoyez la moto qui vous intéresse et votre quartier. On confirme la disponibilité dans la journée.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:1px solid var(--color-divider)">
+          <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">02</span>
+          <div>
+            <h4 style="margin:0 0 var(--space-1);font-size:18px">Essai devant chez vous</h4>
+            <p style="margin:0;font-size:14.5px;color:var(--color-neutral-700)">Korhogo centre : livraison offerte, à l'heure qui vous arrange. Vous roulez, vous décidez après.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:var(--space-4);padding:var(--space-4) 0;border-bottom:2px solid var(--color-divider)">
+          <span style="font-family:var(--font-heading);font-size:15px;color:var(--color-accent);flex:none">03</span>
+          <div>
+            <h4 style="margin:0 0 var(--space-1);font-size:18px">Papiers et garantie remis en main</h4>
+            <p style="margin:0;font-size:14.5px;color:var(--color-neutral-700)">Carte grise vérifiée, bon de garantie signé, contact du mécanicien enregistré dans votre téléphone.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);margin-top:var(--space-6)">
+        <span class="tag tag-neutral" style="white-space:nowrap">Bientôt</span>
+        <span style="font-size:14.5px;color:var(--color-neutral-700)">Paiement échelonné en préparation — demandez-nous où ça en est.</span>
+      </div>
+    </div>
+    <figure class="grayscale" style="position:relative;aspect-ratio:1/1;background:var(--color-surface)">
+      <image-slot id="v3-livraison" shape="rect" placeholder="Photo — livraison d'une moto dans une cour à Korhogo"></image-slot>
+    </figure>
+  </section>
+
+  <section id="histoire" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4)">
+    <div style="border-top:2px solid var(--color-divider);padding-top:var(--space-8)">
+      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">À propos</div>
+      <h2 style="font-size:clamp(32px,4vw,52px);margin:var(--space-2) 0 0;max-width:22em;letter-spacing:-0.03em">Notre histoire : un petit coin, à Korhogo.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-8);margin-top:var(--space-8);align-items:start">
+      <div style="max-width:38em;font-size:16.5px;line-height:1.7;color:var(--color-neutral-800);display:flex;flex-direction:column;gap:var(--space-4)">
+        <p style="margin:0">Le Bon Coin a commencé sans vitrine : une cour, deux motos, et un téléphone qui sonnait le soir. Des voisins qui voulaient rouler sans se ruiner, et un ami mécanicien qui refusait de laisser partir une moto qu'il n'aurait pas réparée lui-même.</p>
+        <p style="margin:0">On a gardé cette habitude. Avant qu'une Apsonic soit proposée ici, elle passe par l'atelier : on écoute le moteur, on démonte ce qui doit l'être, on change ce qui est fatigué, et on note l'état honnêtement — même quand ça fait baisser le prix. Une moto vendue trop cher revient toujours, et jamais pour de bonnes raisons.</p>
+        <p style="margin:0">Ce qui a changé, c'est la livraison. À Korhogo, tout le monde n'a pas le temps de venir au point de vente. Alors on va chez les gens, à l'heure qui les arrange. Beaucoup de nos clients sont devenus nos meilleurs vendeurs : ils envoient leurs cousins, leurs collègues, leurs voisins.</p>
+        <p style="margin:0;font-family:var(--font-heading);font-size:26px;line-height:1.3;letter-spacing:-0.02em;color:var(--color-text);border-top:2px solid var(--color-divider);padding-top:var(--space-4)">« Une bonne moto, une garantie tenue, et quelqu'un à appeler quand ça coince. C'est tout notre métier. »</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--space-6);min-width:0;width:100%">
+        <figure class="grayscale" style="position:relative;aspect-ratio:4/5;background:var(--color-surface)">
+          <image-slot id="v3-atelier" shape="rect" src="./img/atelier-mecanicien.jpg" placeholder="Photo — l'atelier, mécanicien au travail"></image-slot>
+        </figure>
+        <figure class="grayscale" style="position:relative;aspect-ratio:4/3;background:var(--color-surface)">
+          <image-slot id="v3-equipe" shape="rect" src="./img/detail-moteur.jpeg" placeholder="Photo — détail moteur, révision à l'atelier"></image-slot>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4)">
+    <div style="border-top:2px solid var(--color-divider);padding-top:var(--space-8);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-8);align-items:start">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Trois questions</div>
+        <h2 style="font-size:clamp(32px,4vw,52px);margin:var(--space-2) 0 var(--space-4);letter-spacing:-0.03em">Quelle moto vous correspond ?</h2>
+        <p style="margin:0;font-size:16px;color:var(--color-neutral-800);max-width:32em">Usage, budget, priorité. On vous oriente vers une moto du stock — sans engagement, et vous pouvez toujours en essayer une autre.</p>
+      </div>
+
+      <div style="min-width:0">
+        <sc-if value="{{ quizRunning }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="display:flex;align-items:center;gap:var(--space-4);border-bottom:2px solid var(--color-divider);padding-bottom:var(--space-2)">
+              <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600);white-space:nowrap">{{ stepLabel }}</span>
+              <span style="flex:1;height:2px;background:var(--color-neutral-300);display:block;overflow:hidden">
+                <span style="display:block;height:100%;background:var(--color-accent);width:{{ progress }}"></span>
+              </span>
+            </div>
+            <h3 style="font-size:clamp(24px,2.8vw,32px);margin:var(--space-6) 0 var(--space-4);letter-spacing:-0.02em">{{ question }}</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+              <sc-for list="{{ options }}" as="opt" hint-placeholder-count="3">
+                <button type="button" onClick="{{ opt.pick }}" class="btn btn-secondary" style="justify-content:flex-start;text-align:left;width:100%;padding:var(--space-3) var(--space-4);font-size:16px;gap:var(--space-4)">
+                  <span style="color:var(--color-accent);flex:none">{{ opt.letter }}</span>
+                  <span>{{ opt.label }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <button type="button" onClick="{{ restart }}" class="btn btn-ghost" style="margin-top:var(--space-4)">Recommencer</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ quizDone }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:2px solid var(--color-divider);padding-top:var(--space-4)">
+            <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">Notre conseil</div>
+            <h3 style="font-size:clamp(26px,3.2vw,38px);margin:var(--space-3) 0 var(--space-2);letter-spacing:-0.02em">{{ resultName }}</h3>
+            <div style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-neutral-600)">{{ resultMeta }}</div>
+            <p style="margin:var(--space-4) 0 0;font-size:16px;color:var(--color-neutral-800)">{{ resultWhy }}</p>
+            <div style="font-family:var(--font-heading);font-size:38px;letter-spacing:-0.03em;margin-top:var(--space-6);border-top:2px solid var(--color-divider);padding-top:var(--space-4)">{{ resultPrice }}</div>
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)">
+              <a class="btn btn-primary" href="{{ waLink }}" target="_blank" rel="noopener" style="padding:var(--space-3) var(--space-6);font-size:16px;white-space:nowrap">Réserver un essai</a>
+              <button type="button" onClick="{{ restart }}" class="btn btn-secondary" style="padding:var(--space-3) var(--space-6);font-size:16px;white-space:nowrap">Refaire le quiz</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" style="max-width:1240px;margin:0 auto;padding:var(--space-8) var(--space-4)">
+    <div style="border-top:2px solid var(--color-divider);padding-top:var(--space-8);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--space-8);align-items:start">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-700)">Newsletter</div>
+        <h2 style="font-size:clamp(30px,3.8vw,48px);margin:var(--space-2) 0 var(--space-4);letter-spacing:-0.03em">-10% sur votre première moto</h2>
+        <p style="margin:0;font-size:16px;color:var(--color-neutral-800);max-width:32em">Laissez votre email : vous recevez les nouvelles arrivées avant tout le monde, et le code <strong>BIENVENUE10</strong> pour votre premier achat au point de vente.</p>
+      </div>
+      <div style="min-width:0">
+        <sc-if value="{{ notSubscribed }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubscribe }}" style="display:flex;flex-direction:column;gap:var(--space-3);border-top:2px solid var(--color-divider);padding-top:var(--space-4)">
+            <div class="field">
+              <label for="bc-email">Votre email</label>
+              <input class="input" id="bc-email" type="email" required="required" placeholder="votre@email.com" style="min-height:48px;font-size:16px" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="justify-content:flex-start;padding:var(--space-3) var(--space-6);font-size:16px;white-space:nowrap">Je découvre mes motos</button>
+            <span class="text-muted" style="font-size:12.5px">Un ou deux messages par mois. Désinscription en un clic.</span>
+          </form>
+        </sc-if>
+        <sc-if value="{{ subscribed }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:2px solid var(--color-divider);padding-top:var(--space-4)">
+            <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-accent-700)">C'est noté</div>
+            <h3 style="font-size:clamp(24px,3vw,34px);margin:var(--space-3) 0 var(--space-2);letter-spacing:-0.02em">Merci, à très vite.</h3>
+            <p style="margin:0;font-size:16px;color:var(--color-neutral-800)">Votre code <strong>BIENVENUE10</strong> vous attend au point de vente. On vous écrit dès la prochaine arrivée de motos.</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--color-accent);color:var(--color-bg);margin-top:var(--space-8);padding:calc(var(--space-8) * 2) var(--space-4)">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-200)">Le plus rapide</div>
+      <h2 style="font-size:clamp(38px,6vw,84px);margin:var(--space-4) 0 0;letter-spacing:-0.035em;max-width:20em">Envoyez-nous le modèle et votre quartier. On s'occupe du reste.</h2>
+      <a class="btn" href="{{ waLink }}" target="_blank" rel="noopener" style="margin-top:var(--space-8);background:var(--color-bg);color:var(--color-text);border-color:var(--color-bg);padding:var(--space-4) var(--space-8);font-size:17px;white-space:nowrap">WhatsApp {{ phone }}</a>
+    </div>
+  </section>
+
+  <footer id="contact" style="background:var(--color-bg);padding:calc(var(--space-8) * 1.5) var(--space-4) var(--space-8)">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-8);border-top:2px solid var(--color-divider);padding-top:var(--space-8)">
+      <div>
+        <div style="font-family:var(--font-heading);font-size:24px;letter-spacing:-0.02em">LE BON COIN</div>
+        <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--color-neutral-600);margin-top:var(--space-1)">Korhogo · Côte d'Ivoire</div>
+        <p style="margin:var(--space-6) 0 0;font-size:15px;color:var(--color-neutral-800);max-width:28em">Point de vente de motos Apsonic. Motos entretenues, garantie incluse, livraison à domicile. Rouler l'esprit tranquille, sans surprise.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-neutral-600)">Nous joindre</div>
+        <div style="display:grid;gap:var(--space-3);margin-top:var(--space-6);font-size:15px">
+          <a href="{{ waLink }}" target="_blank" rel="noopener">WhatsApp — {{ phone }}</a>
+          <a href="mailto:bangalytoure6780@gmail.com">bangalytoure6780@gmail.com</a>
+          <span style="color:var(--color-neutral-700)">Lundi – samedi, 8h – 19h</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-neutral-600)">Le site</div>
+        <div style="display:grid;gap:var(--space-3);margin-top:var(--space-6);font-size:15px">
+          <a href="#motos">Nos motos</a>
+          <a href="#livraison">Livraison à domicile</a>
+          <a href="#histoire">Notre histoire</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:var(--space-8) auto 0;padding-top:var(--space-4);border-top:1px solid var(--color-divider);display:flex;flex-wrap:wrap;gap:var(--space-4);font-size:12px;color:var(--color-neutral-600)">
+      <span>© 2026 Le Bon Coin — Korhogo</span>
+      <span style="margin-left:auto">{{ domain }}</span>
+    </div>
+  </footer>
+
+
+  <sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:80;display:flex;justify-content:flex-end;background:color-mix(in srgb, var(--color-neutral-900) 45%, transparent)">
+      <div style="width:min(430px,100%);height:100%;overflow-y:auto;background:var(--color-bg);border-left:2px solid var(--color-divider);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);border-bottom:2px solid var(--color-divider);padding-bottom:var(--space-3)">
+          <h3 style="margin:0;font-size:26px;letter-spacing:-0.02em">Votre panier</h3>
+          <button type="button" onClick="{{ closeCart }}" class="btn btn-ghost" style="white-space:nowrap">Fermer</button>
+        </div>
+        <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <p style="margin:0;font-size:15.5px;color:var(--color-neutral-800)">Votre panier est vide. Ajoutez une moto depuis le catalogue : on vous prépare la réservation et la livraison.</p>
+            <a href="#motos" onClick="{{ closeCart }}" class="btn btn-secondary" style="margin-top:var(--space-4);justify-content:flex-start;white-space:nowrap">Voir les motos</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ cartFilled }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+            <sc-for list="{{ cartItems }}" as="item" hint-placeholder-count="2">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:var(--space-4);border-bottom:1px solid var(--color-divider);padding-bottom:var(--space-3)">
+                <div style="min-width:0">
+                  <div style="font-family:var(--font-heading);font-size:18px;letter-spacing:-0.01em">{{ item.name }}</div>
+                  <div style="font-size:11.5px;letter-spacing:0.05em;text-transform:uppercase;color:var(--color-neutral-600)">{{ item.meta }}</div>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:flex-end;gap:var(--space-1);flex:none">
+                  <div style="font-family:var(--font-heading);font-size:18px;white-space:nowrap">{{ item.price }}</div>
+                  <button type="button" onClick="{{ item.remove }}" class="btn btn-ghost" style="padding-right:0">Retirer</button>
+                </div>
+              </div>
+            </sc-for>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--space-4);border-top:2px solid var(--color-divider);padding-top:var(--space-3)">
+              <span style="font-size:12.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-600)">Total indicatif</span>
+              <span style="font-family:var(--font-heading);font-size:30px;letter-spacing:-0.02em;white-space:nowrap">{{ cartTotal }}</span>
+            </div>
+            <a class="btn btn-primary" href="{{ waOrderLink }}" target="_blank" rel="noopener" style="justify-content:flex-start;padding:var(--space-3) var(--space-6);font-size:16px;white-space:nowrap">Commander sur WhatsApp</a>
+            <p class="text-muted" style="margin:0;font-size:12.5px">Aucun paiement en ligne : on confirme la disponibilité, puis vous réglez au point de vente ou à la livraison. Prix négociables.</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;whatsapp&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;0554320555&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;whatsappMessage&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Bonjour Le Bon Coin, je suis intéressé par une moto vue sur votre site.&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; },
+  &quot;domain&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;leboncoin.com&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contact&quot; }
+}">
+class Component extends DCLogic {
+  state = { answers: [], subscribed: false, email: "", cart: [], cartOpen: false };
+
+  catalogue = {
+    m1: { name: "Apsonic F1D 150", amount: 430000, meta: "État 9/10 · garantie 6 mois" },
+    m2: { name: "Apsonic AP125-30 « Aloba »", amount: 320000, meta: "État 9/10 · garantie 6 mois" },
+    m3: { name: "Apsonic AP150 Tiger", amount: 395000, meta: "État 8/10 · garantie 6 mois" },
+    m4: { name: "Apsonic AP125 Sport", amount: 340000, meta: "État 8/10 · garantie 6 mois" },
+    m6: { name: "Apsonic AP110", amount: 250000, meta: "État 8/10 · garantie 3 mois" },
+    m7: { name: "Apsonic AP150-30 Plus neuve", amount: 690000, meta: "Neuve · garantie 12 mois" }
+  };
+
+  fcfa(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " FCFA"; }
+
+  addToCart(key) {
+    this.setState(s => ({ cart: s.cart.indexOf(key) === -1 ? s.cart.concat([key]) : s.cart, cartOpen: true }));
+  }
+
+  removeFromCart(key) {
+    this.setState(s => ({ cart: s.cart.filter(k => k !== key) }));
+  }
+
+  questions = [
+    { q: "Vous roulez surtout où ?", opts: [
+      { label: "En ville, trajets courts tous les jours", tag: "ville" },
+      { label: "Ville et piste, un peu de tout", tag: "mixte" },
+      { label: "Longues routes, charges, hors de Korhogo", tag: "route" }
+    ] },
+    { q: "Votre budget aujourd'hui ?", opts: [
+      { label: "Jusqu'à 280 000 FCFA", tag: "bas" },
+      { label: "Entre 280 000 et 450 000 FCFA", tag: "moyen" },
+      { label: "Plus de 450 000 FCFA, je veux du neuf", tag: "haut" }
+    ] },
+    { q: "Ce qui compte le plus pour vous ?", opts: [
+      { label: "Le prix le plus bas possible", tag: "prix" },
+      { label: "La fiabilité et une garantie longue", tag: "fiable" },
+      { label: "La puissance et le confort", tag: "puissance" }
+    ] }
+  ];
+
+  motos = {
+    ap110: { name: "Apsonic AP110", price: "250 000 FCFA", meta: "Garantie 3 mois · état 8/10", why: "Petite cylindrée sobre et économique : parfaite pour les allers-retours quotidiens en ville, avec une consommation minimale et des pièces qu'on trouve partout à Korhogo." },
+    aloba: { name: "Apsonic AP125-30 « Aloba »", price: "320 000 FCFA", meta: "Garantie 6 mois · état 9/10", why: "La valeur sûre : 125 cm³ increvable, révisée entièrement, papiers en règle. Le bon compromis entre la ville et la piste." },
+    sport: { name: "Apsonic AP125 Sport", price: "340 000 FCFA", meta: "Garantie 6 mois · état 8/10", why: "Selle basse et tenue de route agréable en ville, pneus et plaquettes neufs. Le confort sans monter en cylindrée." },
+    tiger: { name: "Apsonic AP150 Tiger", price: "395 000 FCFA", meta: "Garantie 6 mois · état 8/10", why: "150 cm³ avec du couple : elle encaisse les longues routes du Nord, les charges et les passagers sans forcer. Chaîne et transmission déjà remplacées." },
+    f1d: { name: "Apsonic F1D 150", price: "430 000 FCFA", meta: "Garantie 6 mois · état 9/10", why: "Occasion récente, 150 cm³ souples et allure sport. Révisée entièrement, papiers en règle — la plus agréable du stock sur route." },
+    neuve: { name: "Apsonic AP150-30 Plus neuve", price: "690 000 FCFA", meta: "Garantie 12 mois · 0 km", why: "Sortie de carton, montée et rodée à l'atelier, carte grise faite avec vous et casque offert. Vous partez tranquille pour des années." }
+  };
+
+  pick(tag) { this.setState(s => ({ answers: s.answers.concat([tag]) })); }
+
+  result() {
+    const [usage, budget, prio] = this.state.answers;
+    if (budget === "haut") return prio === "puissance" ? this.motos.f1d : this.motos.neuve;
+    if (usage === "route" || prio === "puissance") return budget === "bas" ? this.motos.ap110 : this.motos.tiger;
+    if (budget === "bas") return this.motos.ap110;
+    if (prio === "fiable") return this.motos.aloba;
+    return usage === "ville" ? this.motos.sport : this.motos.aloba;
+  }
+
+  renderVals() {
+    const raw = this.props.whatsapp ?? "0554320555";
+    const digits = raw.replace(/[^0-9]/g, "");
+    const intl = digits.startsWith("225") ? digits : "225" + digits;
+    const local = digits.replace(/^225/, "").replace(/^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2}).*$/, "$1 $2 $3 $4 $5");
+    const msg = encodeURIComponent(this.props.whatsappMessage ?? "Bonjour Le Bon Coin, je suis intéressé par une moto vue sur votre site.");
+    const step = this.state.answers.length;
+    const done = step >= this.questions.length;
+    const q = this.questions[Math.min(step, this.questions.length - 1)];
+    const res = done ? this.result() : null;
+    return {
+      waLink: "https://wa.me/" + intl + "?text=" + msg,
+      phone: local || raw,
+      domain: this.props.domain ?? "leboncoin.com",
+      quizRunning: !done,
+      quizDone: done,
+      stepLabel: "Question " + Math.min(step + 1, 3) + " sur 3",
+      progress: Math.round((step / this.questions.length) * 100) + "%",
+      question: q.q,
+      options: q.opts.map((o, i) => ({ label: o.label, letter: ["A", "B", "C"][i], pick: () => this.pick(o.tag) })),
+      restart: () => this.setState({ answers: [] }),
+      resultName: res ? res.name : "",
+      resultWhy: res ? res.why : "",
+      resultPrice: res ? res.price : "",
+      resultMeta: res ? res.meta : "",
+      cartOpen: this.state.cartOpen,
+      cartLabel: this.state.cart.length ? "Panier (" + this.state.cart.length + ")" : "Panier",
+      cartEmpty: this.state.cart.length === 0,
+      cartFilled: this.state.cart.length > 0,
+      cartItems: this.state.cart.map(k => ({
+        name: this.catalogue[k].name,
+        meta: this.catalogue[k].meta,
+        price: this.fcfa(this.catalogue[k].amount),
+        remove: () => this.removeFromCart(k)
+      })),
+      cartTotal: this.fcfa(this.state.cart.reduce((t, k) => t + this.catalogue[k].amount, 0)),
+      waOrderLink: "https://wa.me/" + intl + "?text=" + encodeURIComponent(
+        "Bonjour Le Bon Coin, je souhaite réserver :\n" +
+        this.state.cart.map(k => "- " + this.catalogue[k].name + " (" + this.fcfa(this.catalogue[k].amount) + ")").join("\n") +
+        "\nTotal indicatif : " + this.fcfa(this.state.cart.reduce((t, k) => t + this.catalogue[k].amount, 0)) +
+        "\nMon quartier : "
+      ),
+      toggleCart: () => this.setState(s => ({ cartOpen: !s.cartOpen })),
+      closeCart: () => this.setState({ cartOpen: false }),
+      addM1: () => this.addToCart("m1"),
+      addM2: () => this.addToCart("m2"),
+      addM3: () => this.addToCart("m3"),
+      addM4: () => this.addToCart("m4"),
+      addM6: () => this.addToCart("m6"),
+      addM7: () => this.addToCart("m7"),
+      subscribed: this.state.subscribed,
+      notSubscribed: !this.state.subscribed,
+      onSubscribe: e => { e.preventDefault(); this.setState({ subscribed: true }); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
